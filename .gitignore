@@ -1,0 +1,10 @@
+.vscode
+node_modules
+dist
+*.log
+.env
+dev.env
+production.env
+now.env
+yarn-error.log
+.DS_Store

@@ -1,0 +1,38 @@
+{
+    "PREMIUM": [
+        {
+            "validFor": 30,
+            "code": "20PREMIUM",
+            "target": "PREMIUM",
+            "description": "Premium Customers get 20% off"
+        },
+        {
+            "validFor": 30,
+            "code": "NUTS4CHOCO",
+            "target": "PREMIUM",
+            "description": "Premium customers get 30% off the Choco Nuts flavor"
+        }
+    ],
+    "PUBLIC": [
+        {
+            "validFor": 30,
+            "code": "10OFFICE",
+            "target": "PUBLIC",
+            "description": "Okta Ice is cool. 10% off for everybody"
+        },
+        {
+            "validFor": 30,
+            "code": "WILLYVANILLY",
+            "target": "PUBLIC",
+            "description": "15% off the new Vanilla collection"
+        }
+    ],
+    "ROBOT": [
+        {
+            "validFor": 30,
+            "code": "BOT",
+            "target": "ROBOT",
+            "description": "Chatbot gets 30% off"
+        }
+    ]
+}
