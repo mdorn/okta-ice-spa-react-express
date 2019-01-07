@@ -50,7 +50,7 @@ var strategy = new Strategy(
 const app = express();
 app.use(passport.initialize());
 passport.use(strategy);
-app.use(cors());
+app.use(cors());  //  WARNING: enables CORS for all domains; do not use in production
 app.use(express.static('dist'));
 
 // app.get('/api/promos',

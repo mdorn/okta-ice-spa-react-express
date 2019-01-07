@@ -12,12 +12,13 @@
     "dev": "ln -sf dev.env .env && concurrently \"yarn run server\" \"yarn run client\""
   },
   "author": "Matt Dorn",
-  "license": "Unlicense",
+  "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.6.1",
     "@okta/okta-react": "^1.1.4",
     "@okta/okta-signin-widget": "^2.14.0",
     "bootstrap": "^4.1.1",
+    "build-url": "^1.3.2",
     "cors": "^2.8.5",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",

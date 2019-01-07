@@ -6,7 +6,7 @@ import Home from './Home';
 import Nav from './Nav';
 import Social from './layout/Social';
 import Footer from './layout/Footer';
-import Login from './Login';
+import Login from './auth/Login';
 import Dashboard from './Dashboard';
 import Promos from './Promos';
 
@@ -30,7 +30,7 @@ const Main = () => (
               <Route path="/" exact={true} component={Home} />
               <Route path="/promos" component={Promos} />
               <SecureRoute path="/dashboard" component={Dashboard} />
-              <Route path="/login" render={() => <Login baseUrl={process.env.OKTA_URL} />} />
+              <Route path="/login" render={() => <Login baseUrl={process.env.OKTA_URL} idpRequestContext={process.env.IDP_REQUEST_CONTEXT} />} />
               <Route path="/implicit/callback" component={ImplicitCallback} />
             </div>
           </header>

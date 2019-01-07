@@ -50,10 +50,11 @@ export default withAuth(class Dashboard extends Component {
           <p>Your user id is <code>{this.state.idToken.sub}</code>.</p>
           <p>
             <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-              ID_TOKEN
+              id_token
             </button>
+            &nbsp;
             <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-              ACCESS_TOKEN
+              access_token
             </button>
           </p>
           <div className="collapse" id="collapseExample">

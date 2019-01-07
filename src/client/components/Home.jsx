@@ -13,8 +13,12 @@ const Home = () => (
       </div>
     </div>
     <div id="right">
-      <p>Welcome to the Okta Ice example app. It's a simple SPA app written in Node.js/React/Express showing you how to give your users access to restricted resources (in this case promo codes for a fictional Ice Cream store)
-        using <a href="https://openid.net/connect/">OpenID Connect</a>, <a href="https://oauth.net/2/">OAuth 2.0</a>,
+      <p>
+        Welcome to the Okta Ice example app. It's a simple SPA app written in
+        Node.js/React/Express showing you how to give your users access to restricted resources
+        (in this case promo codes for a fictional Ice Cream store)
+        using <a href="https://openid.net/connect/">OpenID Connect</a>,
+        <a href="https://oauth.net/2/">OAuth 2.0</a>,
         and <a href="https://developer.okta.com">Okta</a>.</p>
     </div>
   </Wrapper>
