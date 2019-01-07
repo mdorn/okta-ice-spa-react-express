@@ -1,4 +1,3 @@
-// arthur.avila@textmethod.io
 import uuidv4 from 'uuid/v4';
 import buildUrl from 'build-url';
 
