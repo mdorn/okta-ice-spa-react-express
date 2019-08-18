@@ -39,7 +39,7 @@ export default withAuth(class Promos extends Component {
   }
 
   renderPromos(promos) {
-    const elems = promos.map(promo => {
+    const elems = promos.map((promo) => {
       return(
         <li key={promo.code}>
           {promo.description} - Use promo code <span className={promo.target === 'PUBLIC' ? 'badge badge-primary' : 'badge badge-danger'}>{promo.code}</span>

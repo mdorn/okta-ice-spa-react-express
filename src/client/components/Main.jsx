@@ -7,12 +7,18 @@ import Nav from './Nav';
 import Social from './layout/Social';
 import Footer from './layout/Footer';
 import Login from './auth/Login';
+import LoginNoPrompt from './auth/LoginNoPrompt';
+import LoginRedirect from './auth/LoginRedirect';
 import Dashboard from './Dashboard';
 import Promos from './Promos';
+import Products from './Products';
+import Admin from './Admin';
 
-function onAuthRequired({ history }) {
-  history.push('/login');
-}
+const onAuthRequired = process.env.SIGNIN_MODE === 'hosted' ?
+  null
+  : ({ history }) => {
+    history.push('/login');
+  };
 
 const Main = () => (
   <Router>
@@ -22,25 +28,38 @@ const Main = () => (
         client_id={process.env.OIDC_CLIENT_ID}
         redirect_uri={`${window.location.origin}/implicit/callback`}
         onAuthRequired={onAuthRequired}
-        scope={['openid', 'email', 'profile', 'promos:read']}
+        scope={process.env.SCOPES.split(' ')}
       >
         <Nav />
         <header className="masthead">
           <div className="container h-100">
             <Route path="/" exact component={Home} />
             <Route path="/promos" component={Promos} />
+            <Route path="/products" component={Products} />
             <SecureRoute path="/dashboard" component={Dashboard} />
+            <SecureRoute path="/admin" component={Admin} />
             <Route
               path="/login"
               render={
                 () => (<Login
                   baseUrl={process.env.OKTA_URL}
-                  multiLogin={process.env.MULTI_LOGIN}
+                  signInMode={process.env.SIGNIN_MODE}
+                />)
+              }
+              />
+            <Route
+              path="/login-idp"
+              render={
+                () => (<Login
+                  baseUrl={process.env.OKTA_URL}
                   idpRequestContext={process.env.IDP_REQUEST_CONTEXT}
+                  signInMode={process.env.SIGNIN_MODE}
                 />)
               }
               />
             <Route path="/implicit/callback" component={ImplicitCallback} />
+            <Route path="/login-noprompt" component={LoginNoPrompt} />
+            <Route path="/login-hosted" component={LoginRedirect} />
           </div>
         </header>
       </Security>
@@ -48,5 +67,5 @@ const Main = () => (
       <Footer />
     </div>
   </Router>
-)
+);
 export default Main;

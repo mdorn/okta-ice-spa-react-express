@@ -67,7 +67,9 @@ module.exports = {
         'OKTA_URL': process.env.OKTA_URL,
         'OIDC_CLIENT_ID': process.env.OIDC_CLIENT_ID,
         'AUTH_SERVER_ID': process.env.AUTH_SERVER_ID,
+        'SCOPES': process.env.SCOPES,
         'IDP_REQUEST_CONTEXT': process.env.IDP_REQUEST_CONTEXT,
+        'SIGNIN_MODE': process.env.SIGNIN_MODE,
       })
     }),
     new webpack.ProvidePlugin({

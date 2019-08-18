@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { withAuth } from '@okta/okta-react';
 
 import Wrapper from './layout/Wrapper';
@@ -15,12 +15,10 @@ export default withAuth(class Dashboard extends Component {
 
   async componentDidMount() {
     const tokens = await this.getDecodedTokens();
-    this.setState(
-      {
-        accessToken: tokens.accessToken.payload,
-        idToken: tokens.idToken.payload,
-      }
-    );
+    this.setState({
+      accessToken: tokens.accessToken.payload,
+      idToken: tokens.idToken.payload,
+    });
   }
 
   async getDecodedTokens() {
@@ -35,6 +33,10 @@ export default withAuth(class Dashboard extends Component {
   }
 
   render() {
+    let isAdmin;
+    if (this.state.idToken.groups && this.state.idToken.groups.includes('Admin')) {
+      isAdmin = true;
+    }
     return (
       <Wrapper>
         <div id="left">
@@ -48,6 +50,7 @@ export default withAuth(class Dashboard extends Component {
           <p>Welcome to the dashboard, <strong>{this.state.idToken.name}</strong>!</p>
           <p>Your email address and username is <code>{this.state.idToken.preferred_username}</code>.</p>
           <p>Your user id is <code>{this.state.idToken.sub}</code>.</p>
+          { isAdmin ? <p><Link to="/admin" className="btn btn-primary" style={{ color: 'white' }}>Admin</Link></p> : null }
           <p>
             <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               id_token

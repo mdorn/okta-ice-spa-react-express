@@ -11,7 +11,7 @@ header.masthead {
     // background: url('../img/bg-pattern.png'), -webkit-linear-gradient(to left, $theme-secondary, $theme-tertiary);
     // background: url('../img/bg-pattern.png'), linear-gradient(to left, $theme-secondary, $theme-tertiary);
     // background: url("http://electricblaze.com/unicore/page-builder/assets/images/785.jpg");
-    background: url("../img/ice_cream_bg.jpg") no-repeat center center fixed;
+    background: url("../img/bg_books.jpg") no-repeat center center fixed;
      -webkit-background-size: cover;
      -moz-background-size: cover;
      -o-background-size: cover;
@@ -36,10 +36,13 @@ header.masthead {
         }
     }
     @media (min-width: 992px) {
-        height: 100vh;
+        /* NOTE: adjust these 4 values for various layout needs */
+        // height: 100vh;
         min-height: 775px;
-        padding-top: 0;
+        padding-top: 75px;
         padding-bottom: 0;
+        /* ------- */
+
         .header-content {
             margin-bottom: 0;
 
