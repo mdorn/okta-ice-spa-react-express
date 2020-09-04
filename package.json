@@ -51,7 +51,7 @@
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.13.1",
     "nodemon": "^1.17.3",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.20.3",
